@@ -1,13 +1,13 @@
 import React from "react";
-// Structural icons (FaTools, GiAchievement) are kept
+// Keeping necessary structural icons
 import { IoIosLink } from 'react-icons/io'; 
 import { AiOutlineFilePdf } from 'react-icons/ai';
 import { GoMortarBoard } from 'react-icons/go'; 
 import { GiAchievement } from 'react-icons/gi'; 
 import { FaTools } from 'react-icons/fa'; 
 
-// Import the placeholder image for the headshot
-import headshotImage from "../assets/headshot.jpeg"; 
+// ✅ ASSET PATH CORRECTION: Referencing headshot from the public folder root
+const headshotImage = "/headshot.jpeg"; 
 
 const AboutMePage = () => {
 
@@ -25,7 +25,7 @@ const AboutMePage = () => {
     { name: "PowerPoint", category: "Presentation" },
   ];
 
-  // Certifications Data
+  // Certifications Data (UPDATED PDF LINKS)
   const certifications = [
     { 
       name: "Mastering GRC with Oreno: Governance, Risk & Compliance", 
@@ -64,12 +64,12 @@ const AboutMePage = () => {
     },
     { 
       name: "Data Analytics and Visualization in Python", 
-      link: "/src/assets/analysis.pdf", // PDF in assets folder
+      link: "/analysis.pdf", // ✅ CORRECTED ROOT PATH
       icon: AiOutlineFilePdf 
     },
     { 
       name: "GLC HP Strathmore Hackathon", 
-      link: "/src/assets/hackathon.pdf", // PDF in assets folder
+      link: "/hackathon.pdf", // ✅ CORRECTED ROOT PATH
       icon: AiOutlineFilePdf
     },
   ];
@@ -96,7 +96,7 @@ const AboutMePage = () => {
         {/* Professional Summary and Quote */}
         <section className="bg-white rounded-xl shadow-2xl p-8 mb-12 flex flex-col md:flex-row items-center">
             
-            {/* Headshot (Placeholder) */}
+            {/* Headshot (Image Source Updated) */}
             <div className="w-full md:w-1/4 flex justify-center mb-6 md:mb-0 md:pr-8">
                 <img
                     src={headshotImage} 
@@ -113,18 +113,18 @@ const AboutMePage = () => {
                 </p>
                 <blockquote className="border-l-4 border-russet pl-4 italic text-lg text-gray-600">
                     "Growth is the only evidence of life." 
-                    <footer className="text-sm font-semibold mt-1">— John Henry Newman</footer>
+                    <footer className="text-sm font-semibold mt-1">— John Henry Newman (My North Star)</footer>
                 </blockquote>
             </div>
         </section>
 
         <div className="grid lg:grid-cols-3 gap-10">
 
-          {/* Column 1: Skills & Tools (Updated to simple listing) */}
+          {/* Column 1: Skills & Tools */}
           <div className="lg:col-span-2 space-y-10">
             <section className="p-6 bg-white rounded-xl shadow-lg">
                 <h2 className="text-3xl font-bold text-russet mb-6 flex items-center">
-                    <FaTools className="mr-3"/> Technical Toolkit
+                    <FaTools className="mr-3"/> Technical Toolkit & Skills
                 </h2>
                 
                 {/* Simplified Skills Listing */}
@@ -144,7 +144,7 @@ const AboutMePage = () => {
                 </div>
             </section>
             
-            {/* Awards and Recognition (View Article is now a button) */}
+            {/* Awards and Recognition (View Article is a button) */}
             <section className="p-6 bg-white rounded-xl shadow-lg">
                 <h2 className="text-3xl font-bold text-russet mb-4 flex items-center">
                     <GiAchievement className="mr-3"/> Awards & Recognition
@@ -164,7 +164,6 @@ const AboutMePage = () => {
                                 href="https://strathmore.edu/news-articles/threads-of-service-constance-syombuas-sunique-journey/" 
                                 target="_blank" 
                                 rel="noopener noreferrer" 
-                                // BUTTON STYLE APPLIED HERE
                                 className="inline-block bg-russet text-white font-bold py-2 px-4 rounded-full shadow-md hover:bg-russet/80 transition duration-300 transform hover:scale-105 text-sm flex items-center w-fit"
                             >
                                 View Article <IoIosLink className="ml-2" />
@@ -178,17 +177,16 @@ const AboutMePage = () => {
           {/* Column 2: Resume and Certifications */}
           <div className="lg:col-span-1 space-y-10">
             
-            {/* Resume Section - target="_blank" removed */}
+            {/* Resume Section - Link Updated */}
             <section className="p-6 bg-russet rounded-xl shadow-lg text-white text-center">
                 <h2 className="text-2xl font-bold mb-4 flex justify-center items-center">
-                    <AiOutlineFilePdf className="mr-2 text-3xl"/>Resume
+                    <AiOutlineFilePdf className="mr-2 text-3xl"/> CV & Resume
                 </h2>
                 <p className="mb-4 text-russet-100">
                     A detailed history of my experience and professional accomplishments.
                 </p>
                 <a 
-                  href="/src/assets/resume.pdf" 
-                  // target="_blank" REMOVED: opens in same tab to discourage download
+                  href="/resume.pdf" // ✅ CORRECTED ROOT PATH
                   rel="noopener noreferrer" 
                   className="inline-block bg-white text-russet font-bold py-2 px-6 rounded-full shadow-md hover:bg-cream transition duration-300"
                 >

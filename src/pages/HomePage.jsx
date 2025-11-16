@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Headshot from '../assets/headshot.jpeg';
+
+const headshotImage = "/headshot.jpeg"; 
+
 
 const HomePage = () => {
   return (
