@@ -1,6 +1,6 @@
 import React from "react";
 // 🚀 CORRECTION: Renamed the variable to projectImage to match the usage below.
-const projectImage = "/project5.png"; 
+const projectImage = "/Project5.png"; 
 
 const Project5 = () => {
   return (
